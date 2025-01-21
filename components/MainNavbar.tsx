@@ -1,6 +1,6 @@
 export default function MainNavbar() {
   return (
-    <div className="h-[136px] flex items-center justify-end bg-white border-b border-gray-200">
+    <div className="h-[136px] flex items-center justify-end bg-white">
       <div className="flex items-center space-x-4">
         {/* Profile Section */}
         <div className="w-10 h-10 bg-gray-300 text-white flex items-center justify-center rounded-full">
