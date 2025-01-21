@@ -1,6 +1,6 @@
 export default function Sidebar() {
   return (
-    <div className="sidebar-container column-layout-left position-sticky flex flex-col bg-gray-800 text-white w-60 h-full">
+    <div className="sidebar-container column-layout-left position-sticky flex flex-col white w-60 h-full">
       {/* Accessibility Center */}
       <div className="accessibility-center flex items-center justify-center py-4 h-[136px]">
         <img
@@ -20,7 +20,7 @@ export default function Sidebar() {
               <a
                 role="menuitem"
                 href="/home"
-                className="generic-menu-item active text-white block py-3 px-4 rounded hover:bg-gray-700 flex items-center space-x-3"
+                className="generic-menu-item active text-black block py-3 px-4 rounded hover:bg-gray-700 flex items-center space-x-3"
               >
                 <span className="tw-icon tw-icon-home">
                   <svg
@@ -44,7 +44,7 @@ export default function Sidebar() {
               <a
                 role="menuitem"
                 href="/card"
-                className="generic-menu-item text-gray-300 block py-3 px-4 rounded hover:bg-gray-700 flex items-center space-x-3"
+                className="generic-menu-item text-gray-500 block py-3 px-4 rounded hover:bg-gray-700 flex items-center space-x-3"
               >
                 <span className="tw-icon tw-icon-card-transferwise">
                   <svg
@@ -72,7 +72,7 @@ export default function Sidebar() {
               <a
                 role="menuitem"
                 href="/recipients"
-                className="generic-menu-item text-gray-300 block py-3 px-4 rounded hover:bg-gray-700 flex items-center space-x-3"
+                className="generic-menu-item text-gray-500 block py-3 px-4 rounded hover:bg-gray-700 flex items-center space-x-3"
               >
                 <span className="tw-icon tw-icon-recipients">
                   <svg
@@ -96,7 +96,7 @@ export default function Sidebar() {
               <a
                 role="menuitem"
                 href="/payments"
-                className="generic-menu-item text-gray-300 block py-3 px-4 rounded hover:bg-gray-700 flex items-center space-x-3"
+                className="generic-menu-item text-gray-500 block py-3 px-4 rounded hover:bg-gray-700 flex items-center space-x-3"
               >
                 <span className="tw-icon tw-icon-multi-currency">
                   <svg
