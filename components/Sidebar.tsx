@@ -1,4 +1,10 @@
+"use client"
+
+import { useRouter } from "next/navigation";
+
 export default function Sidebar() {
+  const router = useRouter();
+
   return (
     <div className="sidebar-container column-layout-left position-sticky flex flex-col white w-60 h-full">
       {/* Accessibility Center */}
@@ -7,6 +13,7 @@ export default function Sidebar() {
           src="/thirdlyr-high-res.png" // Replace with the actual path to your logo image
           alt="Logo"
           className="h-[24px] max-w-full"
+          onClick={() => router.push("/")}
         />
       </div>
 
@@ -19,8 +26,8 @@ export default function Sidebar() {
             <li aria-current="page">
               <a
                 role="menuitem"
-                href="/home"
-                className="generic-menu-item active text-black block py-3 px-4 rounded hover:bg-gray-700 flex items-center space-x-3"
+                href="/"
+                className="generic-menu-item text-gray-500 block py-3 px-4 rounded-full hover:bg-[#8DE2DE] hover:text-gray-800 flex items-center space-x-3 transition"
               >
                 <span className="tw-icon tw-icon-home">
                   <svg
@@ -44,7 +51,7 @@ export default function Sidebar() {
               <a
                 role="menuitem"
                 href="/card"
-                className="generic-menu-item text-gray-500 block py-3 px-4 rounded hover:bg-gray-700 flex items-center space-x-3"
+                className="generic-menu-item text-gray-500 block py-3 px-4 rounded-full hover:bg-[#8DE2DE] hover:text-gray-800 flex items-center space-x-3 transition"
               >
                 <span className="tw-icon tw-icon-card-transferwise">
                   <svg
@@ -63,7 +70,7 @@ export default function Sidebar() {
                     ></path>
                   </svg>
                 </span>
-                <span>Card</span>
+                <span>History</span>
               </a>
             </li>
 
@@ -72,7 +79,7 @@ export default function Sidebar() {
               <a
                 role="menuitem"
                 href="/recipients"
-                className="generic-menu-item text-gray-500 block py-3 px-4 rounded hover:bg-gray-700 flex items-center space-x-3"
+                className="generic-menu-item text-gray-500 block py-3 px-4 rounded-full hover:bg-[#8DE2DE] hover:text-gray-800 flex items-center space-x-3 transition"
               >
                 <span className="tw-icon tw-icon-recipients">
                   <svg
@@ -96,7 +103,7 @@ export default function Sidebar() {
               <a
                 role="menuitem"
                 href="/payments"
-                className="generic-menu-item text-gray-500 block py-3 px-4 rounded hover:bg-gray-700 flex items-center space-x-3"
+                className="generic-menu-item text-gray-500 block py-3 px-4 rounded-full hover:bg-[#8DE2DE] hover:text-gray-800 flex items-center space-x-3 transition"
               >
                 <span className="tw-icon tw-icon-multi-currency">
                   <svg
