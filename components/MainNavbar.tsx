@@ -1,8 +1,33 @@
-export default function MainNavbar() {
+"use client";
+import { useRouter } from "next/navigation";
+
+export default function MainNavbar({ currentPage }) {
+  const router = useRouter();
+  console.log(currentPage); // Check what currentPage is
+
   return (
-    <div className="h-[136px] flex items-center justify-end bg-white">
-      <div className="flex items-center space-x-4">
-        {/* Profile Section */}
+    <div className="h-[136px] flex items-center justify-between bg-white px-6">
+      {/* Back Arrow for Tracking Page */}
+      {currentPage?.toLowerCase() === "tracking" && (
+        <button
+          onClick={() => router.push("/")}
+          className="flex items-center text-gray-700 hover:text-gray-900"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="2"
+            stroke="currentColor"
+            className="w-6 h-6 mr-2"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+          <span className="text-sm font-medium">Back</span>
+        </button>
+      )}
+
+      <div className="flex items-center space-x-4 ml-auto">
         <div className="w-10 h-10 bg-gray-300 text-white flex items-center justify-center rounded-full">
           JT
         </div>
