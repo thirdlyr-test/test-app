@@ -1,7 +1,12 @@
+"use client";
+
 import Sidebar from "@/components/Sidebar";
 import MainNavbar from "@/components/MainNavbar";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
+  const router = useRouter();
+
   return (
     <div className="h-screen flex column-layout max-w-[1440px] mx-auto">
       {/* Sidebar Column */}
@@ -30,7 +35,10 @@ export default function Page() {
 
             <section>
               <div className="flex space-x-4 items-center">
-                <button className="h-[32px] px-4 bg-green-400 text-green-700 font-medium rounded-full hover:bg-green-200">
+                <button
+                  className="h-[32px] px-4 bg-green-400 text-green-700 font-medium rounded-full hover:bg-green-200"
+                  onClick={() => router.push("/send")}
+                >
                   Send
                 </button>
                 <button className="h-[32px] px-4 bg-gray-100 text-gray-700 font-medium rounded-full hover:bg-gray-200">
@@ -199,7 +207,9 @@ export default function Page() {
                     </div>
                     {/* Bottom Section */}
                     <div>
-                      <p className="text-2xl font-bold text-gray-900">30,000.00</p>
+                      <p className="text-2xl font-bold text-gray-900">
+                        30,000.00
+                      </p>
                     </div>
                   </div>
                 </a>
