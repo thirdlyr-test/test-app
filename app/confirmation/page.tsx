@@ -1,15 +1,16 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function ConfirmationPopup() {
   const router = useRouter();
+  const [showImage, setShowImage] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      document.getElementById("confirmation-popup").classList.add("show");
-    }, 500);
-    return () => clearTimeout(timer);
+    const loaderTimer = setTimeout(() => {
+      setShowImage(true);
+    }, 1000); // 1 second delay
+    return () => clearTimeout(loaderTimer);
   }, []);
 
   const handleDone = () => {
@@ -21,10 +22,17 @@ export default function ConfirmationPopup() {
       id="confirmation-popup"
       className="fixed inset-0 bg-green-900 bg-opacity-90 flex flex-col items-center justify-center text-center text-white"
     >
-      <div className="mb-4">
-        <img src="/confetti.png" alt="Success" className="h-64 w-64 mx-auto" />{" "}
-        {/* Increased size */}
-      </div>
+      {!showImage ? (
+        <div className="loader border-8 border-white border-t-8 border-t-green-500 rounded-full w-64 h-64 animate-spin mb-4"></div>
+      ) : (
+        <div className="mb-4">
+          <img
+            src="/confetti.png"
+            alt="Success"
+            className="h-64 w-64 mx-auto"
+          />
+        </div>
+      )}
       <h2 className="text-4xl font-bold mb-2">ALL SENT</h2>
       <p className="mb-6 text-lg">Your payment was successfully sent!</p>
       <button
